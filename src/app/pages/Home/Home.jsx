@@ -6,20 +6,20 @@ const chapters = [
     title: "Chương 1: Giới thiệu",
     progress: 75,
     lessons: [
-      { id: 1, name: "Hello!", description: "Learn greetings for meeting", completed: true },
-      { id: 2, name: "Introduce yourself", description: "Say your name", completed: false },
-      { id: 3, name: "Asking how somebody is", description: "Learn how to ask about other people's feeling", completed: false },
-      { id: 4, name: "Checkpoint", description: "Test your skills to access the next chapter", completed: false },
+      { id: 1, name: "Hello!", description: "Learn greetings for meeting",image:'/animal.png', completed: true },
+      { id: 2, name: "Introduce yourself", description: "Say your name", image:'/flower.png',completed: false },
+      { id: 3, name: "Asking how somebody is", description: "Learn how to ask about other people's feeling", image:'/food.png',completed: false },
+      { id: 4, name: "Checkpoint", description: "Test your skills to access the next chapter", image:'/family.png',completed: false },
     ],
   },
   {
     title: "Chương 2: Chào hỏi",
     progress: 50,
     lessons: [
-      { id: 5, name: "Say how you are!", description: "Talk about how you feel", completed: true },
-      { id: 6, name: "Referring to a person", description: "Learn the singular pronouns 'I' and 'you'", completed: true },
-      { id: 7, name: "Asking how somebody is", description: "Learn how to ask about other people's feeling", completed: false },
-      { id: 8, name: "Checkpoint", description: "Test your skills to access the next chapter", completed: false },
+      { id: 5, name: "Say how you are!", description: "Talk about how you feel", image:'/technology.png',completed: true },
+      { id: 6, name: "Referring to a person", description: "Learn the singular pronouns 'I' and 'you'", image:'/health.png',completed: true },
+      { id: 7, name: "Asking how somebody is", description: "Learn how to ask about other people's feeling", image:'/sport.png',completed: false },
+      { id: 8, name: "Checkpoint", description: "Test your skills to access the next chapter", image:'/animal.png',completed: false },
     ],
   },
 ];
@@ -54,7 +54,9 @@ const Home = () => {
                 onClick={() => handleLessonClick(lesson.id)}
               >
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gray-200 rounded-full flex-shrink-0 mr-4"></div>
+                  <div className="w-12 h-12 bg-gray-200 rounded-full overflow-hidden flex-shrink-0 mr-4">
+                    <img src={lesson.image} className="h-full"/>
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-700">{lesson.name}</h3>
                     <p className="text-sm text-gray-500">{lesson.description}</p>
