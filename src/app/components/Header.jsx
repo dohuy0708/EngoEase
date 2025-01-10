@@ -6,9 +6,10 @@ import {
   PuzzlePieceIcon,
 } from '@heroicons/react/24/outline';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export default function Header() {
+  const nav = useNavigate();
   return (
     <header className="w-full fixed top-0 left-0 right-0 z-10 h-hheader">
       <div className="bg-white py-2 px-6 flex justify-between items-center font-regular text-lg border-b">
@@ -28,7 +29,7 @@ export default function Header() {
               }
             >
               <HomeIcon className="h-5 w-5" />
-              <span>Home</span>
+              <span>Trang chủ</span>
             </NavLink>
             <NavLink
               to="/grammar"
@@ -39,7 +40,7 @@ export default function Header() {
               }
             >
               <BookOpenIcon className="h-5 w-5" />
-              <span>Grammar</span>
+              <span>Ngữ pháp</span>
             </NavLink>
             <NavLink
               to="/vocabulary"
@@ -50,7 +51,7 @@ export default function Header() {
               }
             >
               <ClipboardIcon className="h-5 w-5" />
-              <span>Vocabulary</span>
+              <span>Từ vựng</span>
             </NavLink>
             <NavLink
               to="/video"
@@ -72,14 +73,14 @@ export default function Header() {
               }
             >
               <PuzzlePieceIcon className="h-5 w-5" />
-              <span>Practice</span>
+              <span>Luyện tập</span>
             </NavLink>
           </nav>
           <div className="flex items-center space-x-2">
-            <span className="text-gray-700">Name</span>
-            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center">
-              l=av
+            <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center overflow-hidden justify-center">
+             <img src='/flower.png' className='h-full cursor-pointer' onClick={()=>nav('profile')} /> 
             </div>
+            <span className="text-gray-700 text-lg">Huy Hoàng</span>
           </div>
         </div>
       </div>
